@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.risingj.cordova.socialshare"
+      version="0.0.0">
+    <name>Social Share</name>
+    <description>Cordova plugin for sharing links, and text to social networks.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,social,share,facebook,twitter</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/socialshare.js" name="socialshare">
+        <clobbers target="" />
+    </js-module>
+    
+    <!-- android -->
+    <!--<platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="" >
+                <param name="android-package" value=""/>
+            </feature>
+        </config-file>
+        <source-file src="" target-dir="" />
+    </platform> -->
+
+    <!-- amazon-fireos -->
+    <!--<platform name="amazon-fireos">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="" >
+                <param name="android-package" value=""/>
+            </feature>
+        </config-file>
+        <source-file src="" target-dir="" />
+    </platform> -->
+    
+    <!-- ubuntu -->
+    <!-- <platform name="ubuntu">
+        <header-file src="" />
+        <source-file src="" />
+    </platform> -->
+
+    <!-- ios -->
+    <!-- <platform name="ios">    
+        <config-file target="config.xml" parent="/*">
+            <feature name="">
+                <param name="ios-package" value="" /> 
+            </feature>
+        </config-file>
+        <header-file src="" />
+	    <source-file src="" />
+    </platform> -->
+
+    <!-- blackberry10 -->
+    <!-- <platform name="blackberry10">
+    <source-file src="" target-dir="" />
+        <config-file target="www/config.xml" parent="/widget">
+            <feature name="" value=""/>
+        </config-file>
+    </platform> -->
+
+    <!-- wp7 -->
+    <platform name="wp7">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SocialShare">
+                <param name="wp-package" value="SocialShare"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/wp/SocialShare.cs" />
+    </platform>
+
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SocialShare">
+                <param name="wp-package" value="SocialShare"/>
+            </feature>
+        </config-file>
+        <source-file src="src/wp/SocialShare.cs" />
+    </platform>
+    
+</plugin>
