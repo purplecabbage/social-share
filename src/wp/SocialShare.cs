@@ -10,11 +10,12 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Runtime.Serialization;
 using Microsoft.Phone.Tasks;
+using WPCordovaClassLib.Cordova.JSON;
 
-namespace WP7CordovaClassLib.Cordova.Commands
+namespace WPCordovaClassLib.Cordova.Commands
 {
 
-    public class PGSocialShare : BaseCommand
+    public class SocialShare : BaseCommand
     {
         public enum ShareType
         {
@@ -41,7 +42,10 @@ namespace WP7CordovaClassLib.Cordova.Commands
 
         public void share(string options)
         {
-            ShareOptions opts = JSON.JsonHelper.Deserialize<ShareOptions[]>(options)[0];
+            string[] args = JsonHelper.Deserialize<string[]>(options);
+            string callbackId = args[1];
+
+            ShareOptions opts = JsonHelper.Deserialize<ShareOptions>(args[0]);
             switch (opts.shareType)
             {
                 case ShareType.Status :
@@ -51,6 +55,8 @@ namespace WP7CordovaClassLib.Cordova.Commands
                     shareLink(opts.title, opts.url, opts.message);
                     break;
             }
+
+            DispatchCommandResult(new PluginResult(PluginResult.Status.OK), callbackId);
         }
 
         protected void shareStatus(string msg)
@@ -58,8 +64,6 @@ namespace WP7CordovaClassLib.Cordova.Commands
             ShareStatusTask shareStatusTask = new ShareStatusTask();
             shareStatusTask.Status = msg;
             shareStatusTask.Show();
-
-            this.DispatchCommandResult();
         }
 
         protected void shareLink(string title, string url, string msg)
@@ -69,8 +73,6 @@ namespace WP7CordovaClassLib.Cordova.Commands
             shareLinkTask.LinkUri = new Uri(url, UriKind.Absolute);
             shareLinkTask.Message = msg;
             shareLinkTask.Show();
-
-            this.DispatchCommandResult();
         }
     }
 }
