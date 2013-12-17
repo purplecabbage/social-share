@@ -3,13 +3,13 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
       id="com.risingj.cordova.socialshare"
-      version="0.0.0">
+      version="0.1.0">
     <name>Social Share</name>
     <description>Cordova plugin for sharing links, and text to social networks.</description>
     <license>Apache 2.0</license>
     <keywords>cordova,social,share,facebook,twitter</keywords>
-    <repo></repo>
-    <issue></issue>
+    <repo>https://github.com/purplecabbage/social-share.git</repo>
+    <issue>https://github.com/purplecabbage/social-share/issues</issue>
 
     <js-module src="www/socialshare.js">
         <clobbers target="SocialShare" />
