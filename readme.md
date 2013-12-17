@@ -4,23 +4,22 @@ Sample Use:
 In your head
 ---
 
-[script type="text/javascript" charset="utf-8" src="PGSocialShare.js"][/script]
 
 
 Somewhere in your code 
 ---
 
-        function shareStatus()
-        {
-            navigator.plugins.pgSocialShare.shareStatus("This was shared from JS+PhoneGap+WP7 Yo!");
-        }
+    function shareStatus()
+    {
+        SocialShare.shareStatus("This was shared from JS+PhoneGap+WP8 Yo!");
+    }
 
-        function shareLink()
-        {
-        navigator.plugins.pgSocialShare.shareLink("WP7 PhoneGap Plugins",
-        "https://github.com/purplecabbage/phonegap-plugins/tree/master/WindowsPhone",
-        "Watch for updates here soon! Shared from JavaScript");
-        }
+    function shareLink()
+    {
+        SocialShare.shareLink("WP7 PhoneGap Plugins",
+                              "https://github.com/purplecabbage/phonegap-plugins/tree/master/WindowsPhone",
+                              "Watch for updates here soon! Shared from JavaScript");
+    }
 
 
 In your markup :
